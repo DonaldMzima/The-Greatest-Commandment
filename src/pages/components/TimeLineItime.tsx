@@ -1,29 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-interface TimelineItem {
-  Id: number;
-  Episode: string;
-  Title: string;
-  Media: number;
-  Description: string;
-  Image: string;
-  Icon: string;
-  Audio: string;
-  RemoteId: string;
-  Status: number;
-  isActive: number;
-  inId: string;
-  CreateDate: string;
-  MediaName: string;
-  Category: string;
-  Epoch: number;
-  AudioSize: number;
-}
-
-interface ApiResponse {
-  Timeline: TimelineItem[];
-}
+import { getTimelineData } from "../../../utils/https";
+import { TimelineItem } from "../../../utils/types";
 
 const Timeline: React.FC = () => {
   const [timelineData, setTimelineData] = useState<TimelineItem[]>([]);
@@ -31,12 +8,10 @@ const Timeline: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<ApiResponse>(
-          "https://arthurfrost.qflo.co.za/php/getTimeline.php"
-        );
-        setTimelineData(response.data.Timeline);
-      } catch (error) {
-        console.error("Error fetching timeline data:", error);
+        const data = await getTimelineData();
+        setTimelineData(data.Timeline);
+      } catch (error: any) {
+        console.error(error.message);
       }
     };
 
