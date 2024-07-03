@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useTimelineData } from "../../../utils/https";
 import LoadingSpinner from "./LoadingSpinner";
 import Fuse from "fuse.js";
+import { useTimelineData } from "../../utils/https";
 
 const Timeline: React.FC = () => {
   const { data: timelineData, isLoading, error } = useTimelineData();
