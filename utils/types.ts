@@ -17,3 +17,7 @@ export interface TimelineItem {
   Epoch: number;
   AudioSize: number;
 }
+
+export interface ApiResponse {
+  Timeline: TimelineItem[];
+}
