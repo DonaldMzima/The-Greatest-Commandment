@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { getTimelineData } from "../../../utils/https";
-import { TimelineItem } from "../../../utils/types";
+import React from "react";
+import { useTimelineData } from "../../../utils/https";
 
 const Timeline: React.FC = () => {
-  const [timelineData, setTimelineData] = useState<TimelineItem[]>([]);
+  const { data: timelineData, isLoading, error } = useTimelineData();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getTimelineData();
-        setTimelineData(data.Timeline);
-      } catch (error: any) {
-        console.error(error.message);
-      }
-    };
-
-    fetchData();
-  }, []);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {"No Data"}</div>;
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      {timelineData.map((item) => (
+      {timelineData?.Timeline.map((item) => (
         <div
           key={item.Id}
           className="flex flex-col md:flex-row mb-8 pb-8 border-b border-gray-200"

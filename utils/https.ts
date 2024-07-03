@@ -1,19 +1,18 @@
-import axios from "axios";
-import { TimelineItem } from "./types";
+import { useQuery } from "react-query";
+import { ApiResponse } from "./types";
 
-interface ApiResponse {
-  Timeline: TimelineItem[];
-}
-
-const getTimelineData = async (): Promise<ApiResponse> => {
-  try {
-    const response = await axios.get<ApiResponse>(
-      "https://arthurfrost.qflo.co.za/php/getTimeline.php"
-    );
-    return response.data;
-  } catch (error) {
-    throw new Error(`Error fetching timeline data: ${error}`);
+const fetchTimelineData = async (): Promise<ApiResponse> => {
+  const response = await fetch(
+    "https://arthurfrost.qflo.co.za/php/getTimeline.php"
+  );
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
   }
+  return response.json();
 };
 
-export { getTimelineData };
+const useTimelineData = () => {
+  return useQuery("timelineData", fetchTimelineData);
+};
+
+export { useTimelineData };
