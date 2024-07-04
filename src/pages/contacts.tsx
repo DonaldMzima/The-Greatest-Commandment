@@ -1,3 +1,4 @@
+import Footer from "@/components/UI/Footer";
 import Navbar from "@/components/UI/Navbar";
 import React, { useState } from "react";
 
@@ -72,6 +73,7 @@ const Contact: React.FC = () => {
           </form>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

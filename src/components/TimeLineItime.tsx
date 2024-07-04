@@ -4,6 +4,7 @@ import LoadingSpinner from "./LoadingSpinner";
 import Fuse from "fuse.js";
 import { useTimelineData } from "../../utils/https";
 import ScrollToTopButton from "./Buttons/ScrollToTopButton";
+import Footer from "./UI/Footer";
 
 const Timeline: React.FC = () => {
   const { data: timelineData, isLoading, error } = useTimelineData();
@@ -27,6 +28,8 @@ const Timeline: React.FC = () => {
     ? fuse.search(searchTerm).map((result) => result.item)
     : timelineData?.Timeline || [];
 
+  const filteredResults = results.filter((item) => item.Id === 227);
+
   return (
     <div className="max-w-4xl mx-auto p-4">
       <div className="mb-4 relative">
@@ -48,7 +51,7 @@ const Timeline: React.FC = () => {
           </p>
         )}
       </div>
-      {results.map((item) => (
+      {filteredResults.map((item) => (
         <div
           key={item.Id}
           className="flex flex-col md:flex-row mb-8 pb-8 border-b border-gray-200"
@@ -87,6 +90,7 @@ const Timeline: React.FC = () => {
           </div>
         </div>
       ))}
+
       <ScrollToTopButton />
     </div>
   );

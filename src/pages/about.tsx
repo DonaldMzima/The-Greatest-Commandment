@@ -1,3 +1,4 @@
+import Footer from "@/components/UI/Footer";
 import Navbar from "@/components/UI/Navbar";
 import React from "react";
 
@@ -43,6 +44,7 @@ const About: React.FC = () => {
           </p>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
