@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
 import LoadingSpinner from "./LoadingSpinner";
 import Fuse from "fuse.js";
 import { useTimelineData } from "../../utils/https";
+import ScrollToTopButton from "./Buttons/ScrollToTopButton";
 
 const Timeline: React.FC = () => {
   const { data: timelineData, isLoading, error } = useTimelineData();
@@ -36,6 +36,15 @@ const Timeline: React.FC = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded text-black"
         />
+      </div>
+      <div className="mb-4">
+        {searchTerm && (
+          <p className="text-gray-700">
+            {results.length > 0
+              ? `Results for: "${searchTerm}"`
+              : `No Results For: "${searchTerm}"`}
+          </p>
+        )}
       </div>
       {results.map((item) => (
         <div
@@ -76,6 +85,7 @@ const Timeline: React.FC = () => {
           </div>
         </div>
       ))}
+      <ScrollToTopButton />
     </div>
   );
 };
