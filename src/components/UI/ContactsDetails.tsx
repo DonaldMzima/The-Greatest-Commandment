@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Contact: React.FC = () => {
+export const ContactsDetails = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -73,5 +73,3 @@ const Contact: React.FC = () => {
     </>
   );
 };
-
-export default Contact;

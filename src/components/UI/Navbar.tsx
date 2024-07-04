@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [activeLink, setActiveLink] = useState<string>(""); // State to track active link
 
   useEffect(() => {

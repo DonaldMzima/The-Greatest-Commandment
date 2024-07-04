@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/UI/Navbar";
 import Hero from "@/components/UI/Hero";
 import Footer from "@/components/UI/Footer";
 import Timeline from "@/components/TimeLineItime";
-import Contact from "@/components/UI/contacts";
+import { ContactsDetails } from "@/components/UI/ContactsDetails";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Timeline />
-      <Contact />
+      <ContactsDetails />
       <Footer />
     </>
   );
