@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
             />
           </svg>
           {/* Logo Text */}
-          <div className="text-xl font-light text-gray-300 ml-2">
+          <div className="text-xl  text-gray-300 ml-2">
             The
             <br />
             Greatest
