@@ -14,10 +14,7 @@ const Hero: React.FC = () => {
           Click the button below to listen to The Greatest Commandment audio
           clip!
         </p>
-        <a
-          href="timeLineItem"
-          className="bg-gray-800 text-white px-4 py-2 rounded"
-        >
+        <a href="#audio" className="bg-gray-800 text-white px-4 py-2 rounded">
           Get Started
         </a>
       </div>
