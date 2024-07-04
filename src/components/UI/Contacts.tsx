@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <section className="bg-gray-200 text-gray-800 py-20">
+      <section id="contacts" className="bg-gray-200 text-gray-800 py-20 ">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2>
           <form onSubmit={handleSubmit} className="space-y-4">

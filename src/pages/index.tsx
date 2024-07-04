@@ -4,7 +4,7 @@ import Navbar from "@/components/UI/Navbar";
 import Hero from "@/components/UI/Hero";
 import Footer from "@/components/UI/Footer";
 import Timeline from "@/components/TimeLineItime";
-import Contact from "./contacts";
+import Contact from "@/components/UI/contacts";
 
 const inter = Inter({ subsets: ["latin"] });
 

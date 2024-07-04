@@ -4,15 +4,35 @@ const Navbar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>(""); // State to track active link
 
   useEffect(() => {
-    // Function to determine active link based on current URL pathname
-    const currentPath = window.location.pathname;
-    if (currentPath === "/") {
-      setActiveLink("home");
-    } else if (currentPath === "/about") {
-      setActiveLink("about");
-    } else if (currentPath === "/contacts") {
-      setActiveLink("contacts");
-    }
+    // Function to determine active link based on current hash in URL
+    const handleHashChange = () => {
+      const currentHash = window.location.hash;
+      switch (currentHash) {
+        case "#about":
+          setActiveLink("about");
+          break;
+        case "#audio":
+          setActiveLink("audio");
+          break;
+        case "#contacts":
+          setActiveLink("contacts");
+          break;
+        default:
+          setActiveLink("home");
+          break;
+      }
+    };
+
+    // Initial setup on mount
+    handleHashChange();
+
+    // Event listener for hash change
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []); // Empty dependency array to run only once on mount
 
   const handleLinkClick = (link: string) => {
@@ -65,7 +85,7 @@ const Navbar: React.FC = () => {
             Home
           </a>
           <a
-            href="/about"
+            href="#about"
             className={`text-gray-300 ${
               activeLink === "about" ? "font-bold" : ""
             }`}
@@ -74,7 +94,16 @@ const Navbar: React.FC = () => {
             About
           </a>
           <a
-            href="/contacts"
+            href="#audio"
+            className={`text-gray-300 ${
+              activeLink === "audio" ? "font-bold" : ""
+            }`}
+            onClick={() => handleLinkClick("audio")}
+          >
+            Audio
+          </a>
+          <a
+            href="#contacts"
             className={`text-gray-300 ${
               activeLink === "contacts" ? "font-bold" : ""
             }`}
