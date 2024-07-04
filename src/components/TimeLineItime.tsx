@@ -32,7 +32,8 @@ const Timeline: React.FC = () => {
 
   return (
     <div id="audio" className="max-w-4xl mx-auto p-4 ">
-      <div className="mb-4 relative">
+      <h2 className="text-3xl font-bold mb-8 text-center">Audio Clip</h2>
+      <div className="mb-28 relative">
         <input
           type="text"
           placeholder="Search..."
