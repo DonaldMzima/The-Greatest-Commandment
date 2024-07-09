@@ -6,7 +6,7 @@ This project is a single-page React application that displays content retrieved 
 
 ## UI
 
-![Preview Image](/public/Landing.png)
+![Preview Image](/public/LandingPage.png)
 ![Preview Image](/public/Audio.png)
 ![Preview Image](/public/Contact.png)
 
@@ -74,4 +74,4 @@ Feel free to customize the look and feel of the application using Tailwind CSS. 
 This project showcases the ability to build a modern, single-page React application with a focus on clean code, performance, and user experience. If you have any questions or need further assistance, please feel free to reach out.
 
 **Author**: Donald Mzima
-**Date**: July 2024
+**Date**: Jun 2024
