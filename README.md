@@ -1,40 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CRG Assessment Project
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+This project is a single-page React application that displays content retrieved from a JSON API. It uses various modern web development technologies and follows best practices in design and functionality.
+
+## UI
+
+![Preview Image](/public/Landing.png)
+![Preview Image](/public/Audio.png)
+![Preview Image](/public/Contact.png)
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **React Query**: Data fetching library for React, which simplifies data fetching, caching, and synchronization.
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── components
+└── Buttons
+│ └── ScrollToTopButton.tsx
+└── UI
+│ └── About.tsx
+│ └── ContactDetails.tsx
+│ └── Footer.tsx
+│ └── Hero.tsx
+│ └── Navbar.tsx
+└── LoadingSinner.tsx
+└── TimeLineItem.tsx
+├── pages
+│ └── _app.tsx
+│ └── _document_.tsx
+│ └── index.tsx
+└── api
+├── public
+│ └── UI.png
+├── styles
+│ └── globals.css
+├── utils
+│ └── https.tsx
+│ └── types.tsx
+├── .eslintrc.json
+├── .gitignore
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── postcss.config.mjs.json
+├── README.md
+├── tailwind.config.js
+├── tsconfig.json
+└── yarn.lock
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Data Fetching
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **The application fetches JSON content from the following API endpoint**: https://arthurfrost.qflo.co.za/php/getTimeline.php
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Assets
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Images and Icons: The images and icons used in the project are located at**: https://arthurfrost.qflo.co.za/Images/
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Audio Files: The audio files used in the project are located at**: https://arthurfrost.qflo.co.za/MP3/
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+Feel free to customize the look and feel of the application using Tailwind CSS. You can modify the tailwind.config.js file and the styles in the /styles directory to suit your preferences.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Conclusion
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project showcases the ability to build a modern, single-page React application with a focus on clean code, performance, and user experience. If you have any questions or need further assistance, please feel free to reach out.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Author**: Donald Mzima
+**Date**: July 2024
